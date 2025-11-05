@@ -205,7 +205,7 @@ a {
   z-index: 10000;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: var(--date-height);
   background-color: #f2f2f3;
   transition: top 0.3s ease;
@@ -321,7 +321,7 @@ a {
   font-family: "br_omegalight", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
     sans-serif;
   font-weight: 400;
-  font-size: clamp(16px, 3vw, 28px);
+  font-size: clamp(14px, 3vw, 28px);
 
   max-width: var(--info-p-max-width);
 
@@ -677,6 +677,16 @@ input:-webkit-autofill {
     padding-bottom: 60px;
     padding-top: 20px;
   }
+  #ghost img {
+    max-width: 115%;
+    right: -80px;
+  }
+  #info_container div p {
+    padding-left: 0px;
+  }
+  #info_container div h3 {
+    padding-left: 0px;
+  }
 }
 
 @media only screen and (max-width: 1265px) {
@@ -737,6 +747,9 @@ input:-webkit-autofill {
   .timeEventContainer {
     gap: 20px;
   }
+  #boomLandingLogo {
+    width: clamp(200px, 67vw, 822px);
+  }
 }
 
 @media only screen and (max-width: 570px) {
@@ -755,7 +768,8 @@ input:-webkit-autofill {
     transform: translateY(-35%);
     width: 101vw;
     top: 268%;
-    border-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
 
     padding-right: 0;
     padding-left: 0;

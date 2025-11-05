@@ -5,7 +5,6 @@ const landingContainer = document.getElementById("landing_container");
 const menuItems = document.getElementById("menu_items");
 const menuButton = document.getElementById("menuButton");
 const menuIcon = document.getElementById("menuHeaderIcon");
-
 let menuOpen = false;
 
 // Helper: place the date container either at the top (when header is hidden)
@@ -43,11 +42,13 @@ window.addEventListener("scroll", () => {
     menuIcon.style.transform = "rotate(0deg)";
     // headerDate moves to top of page
     headerDate.style.top = "0";
+    landingContainer.style.marginTop = "0px";
   } else {
     // Scrolling up → show header
     header.style.transform = "translateY(0)";
     // headerDate moves just below header
     headerDate.style.top = `${headerHeight}px`;
+    landingContainer.style.marginTop = "135px";
   }
 
   lastScroll = currentScroll;
