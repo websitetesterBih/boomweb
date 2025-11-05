@@ -1,0 +1,697 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+button {
+  background: none; /* remove default background */
+  border: none; /* remove border */
+  padding: 0; /* remove default padding */
+  margin: 0; /* remove default margin */
+  font: inherit; /* inherit font from parent */
+  color: inherit; /* inherit text color */
+  cursor: pointer; /* keep pointer cursor */
+}
+
+a {
+  text-decoration: none; /* removes underline */
+  color: inherit; /* makes it inherit color from parent */
+  cursor: pointer; /* optional: removes pointer cursor */
+}
+
+/* FONTS *******************************/
+
+@font-face {
+  font-family: "br_omegamedium";
+  src: url("./fonts/lexend-v26-latin-500.woff2") format("woff2"),
+    url("./fonts/lexend-v26-latin-500.woff") format("woff");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "br_omegablack";
+  src: url("./fonts/lexend-v26-latin-700.woff2") format("woff2"),
+    url("./fonts/lexend-v26-latin-700.woff") format("woff");
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "br_omegaregular";
+  src: url("./fonts/lexend-v26-latin-regular.woff2") format("woff2"),
+    format("woff2"), url("./fonts/lexend-v26-latin-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "br_omega300";
+  src: url("./fonts/lexend-v26-latin-300.woff2") format("woff2"),
+    format("woff2"), url("./fonts/lexend-v26-latin-300.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "br_omegabold";
+  src: url("./fonts/lexend-v26-latin-700.woff2") format("woff2"),
+    url("./fonts/lexend-v26-latin-800.woff") format(("woff"));
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "br_omegalight";
+  src: url("./fonts/lexend-v26-latin-200.woff2") format("woff2"),
+    url("./fonts/lexend-v26-latin-200.woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* FONTS -------------------------------*/
+
+/* HEADER STYLES *******************************/
+
+#header_container {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 135px;
+
+  position: fixed; /* sticks to top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease; /* smooth hide/show */
+  z-index: 100000;
+}
+
+#boomHeaderLogo {
+  height: 68px;
+  width: auto;
+  padding-left: 54px;
+}
+
+#menu_container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#menuButton {
+  margin-right: 46px;
+  z-index: 1001;
+}
+
+#menuHeaderIcon {
+  transition: transform 0.3s ease; /* smooth rotation */
+}
+
+#menu_items {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-52%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 16px 32px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#menu_items.menu-visible {
+  opacity: 1;
+  pointer-events: all;
+  right: calc(100% + 20px);
+}
+
+.menu-item {
+  font-family: "br_omegaregular", sans-serif;
+  font-size: 18px;
+  color: #1e1e1e;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.menu-item:hover {
+  color: #00ade9;
+}
+
+#header_date_container {
+  display: flex;
+  position: fixed;
+  top: 135px;
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: #f2f2f3;
+  transition: top 0.3s ease;
+  text-align: center;
+}
+
+#date {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+  font-size: clamp(20px, 4vw, 50px);
+}
+
+/* HEADER STYLES -------------------------------*/
+
+/* LANDING STYLES *******************************/
+
+#landing_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 754px;
+  background-image: url("./images/landing_imgs/landingBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  margin-top: 200px;
+  padding-top: 20px;
+}
+
+#landing_container h3 {
+  position: absolute;
+  top: 10%;
+  left: 6vw;
+  margin: 0;
+  color: #fff;
+  font-family: "br_omegaregular", "Grotek", sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.5vw, 48px);
+  text-align: left;
+}
+
+#boomLandingLogo {
+  width: clamp(258px, 80vw, 822px);
+  height: auto;
+  display: block;
+  max-width: none; /* remove the cap */
+}
+
+/* LANDING STYLES -------------------------------*/
+
+/* INFO STYLES *******************************/
+
+#info_container {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 100%;
+  max-height: 821px;
+
+  background-color: #034c7a;
+}
+
+#ghost {
+  display: contents; /* makes span disappear from layout */
+}
+
+#ghost img {
+  z-index: 1;
+  position: absolute; /* removes it from the normal flow */
+  pointer-events: none; /* makes it non-interactive (can’t be clicked/hovered) */
+
+  max-width: 100%;
+  height: auto;
+  display: block;
+  right: 700px;
+}
+
+#sarajevoWrapper {
+  height: auto;
+  overflow: hidden;
+}
+
+#sarajevo {
+  max-width: 100%;
+  height: 821px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: relative;
+  z-index: 10;
+}
+
+#info_container div h3 {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+  font-size: clamp(20px, 8vw, 59.5px);
+
+  max-width: 421px;
+
+  padding-left: 110px;
+  padding-right: 85px;
+}
+
+#info_container div p {
+  font-family: "br_omegalight", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 3vw, 28px);
+
+  max-width: 781px;
+
+  padding-left: 110px;
+  padding-right: 40px;
+}
+
+/* INFO STYLES -------------------------------*/
+
+/* MEET STYLES *******************************/
+#meet_container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#meet_container h3 {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+  font-size: clamp(33px, 7vw, 59.5px);
+  text-align: center;
+}
+
+#roster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.person {
+  flex: 1 1 200px; /* grow:1, shrink:1, base width:200px */
+  max-width: 232px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "br_omegaregular", "Grotek", sans-serif;
+  font-weight: 400;
+  gap: 0;
+}
+
+.person img {
+  width: 100%;
+  height: 192px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.person h4 {
+  margin: 0;
+  margin-top: 26px;
+  font-size: clamp(18px, 5vw, 27px);
+  max-width: 197px;
+}
+
+.person p {
+  font-size: clamp(11px, 4vw, 17px);
+  text-align: center;
+
+  letter-spacing: 0.05em;
+  max-width: 267px;
+}
+/* MEET STYLES -------------------------------*/
+
+/* SCHEDULE STYLES *******************************/
+
+#schedule_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+
+  background-color: #231f20;
+
+  max-width: 100%;
+
+  color: #f2f2f3;
+  letter-spacing: 1.2px;
+  font-size: clamp(12px, 4vw, 24px);
+  font-family: "br_omega300", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: medium;
+
+  line-height: 29px;
+  padding-bottom: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#schedule_container h3 {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+  font-size: clamp(24px, 5vw + 1rem, 59.5px);
+
+  padding-top: 78px;
+  color: #00ade9;
+}
+
+.dayText1,
+.dayText2 {
+  font-family: "br_omegamedium", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+  font-size: clamp(17px, 5vw, 28px);
+}
+
+.dayText1 {
+  letter-spacing: 5%;
+}
+
+#schedule_day1 {
+  margin-bottom: 20px;
+}
+
+.timeEventContainer {
+  display: flex;
+  max-width: 572px;
+  justify-content: flex-start;
+  gap: 21px;
+  align-items: flex-start; /* keep time and activity aligned at top */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.time,
+.activity {
+  padding: 0;
+  margin: 0;
+}
+
+.time {
+  /* fixed column for times so spacing is consistent per row */
+  flex: 0 0 182px;
+  width: auto; /* keep width controlled by flex */
+  padding-bottom: 24px;
+}
+
+.activity {
+  /* activity takes remaining space */
+  flex: 1 1 auto;
+  max-width: none; /* allow flex to control width */
+  padding-bottom: 24px;
+}
+
+.blackText {
+  font-family: "br_omegablack", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+}
+
+#schedule_day1,
+#schedule_day2 {
+  width: 100%;
+  max-width: 554px;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* SCHEDULE STYLES -------------------------------*/
+
+/* FORM STYLES *******************************/
+
+#form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto; /* allows shrinking */
+}
+
+#form_container h3 {
+  font-family: "br_omegaregular", sans-serif;
+  font-weight: bold;
+  font-size: clamp(24px, 5vw + 1rem, 59.5px);
+  line-height: 1;
+}
+
+#excelForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form_container input {
+  border: 1px solid #00ade9;
+  font-family: "br_omegaregular", sans-serif;
+  font-size: clamp(18px, 3vw, 28px);
+  color: #1e1e1e;
+  width: clamp(300px, 80vw, 554px);
+
+  height: clamp(58px, 10vw, 87px);
+  margin: 0px;
+  padding-left: clamp(17px, 3vw, 33px);
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+#form_container input:focus {
+  border-color: #e68a40; /* change to your desired color */
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; /* override autofill background */
+  -webkit-text-fill-color: #1e1e1e; /* override autofill text color */
+}
+
+#form_container input::placeholder {
+  font-family: "br_omegaregular", sans-serif;
+  font-size: clamp(18px, 3vw, 28px);
+  color: #bec0c1;
+}
+
+#submitContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 554px;
+
+  box-sizing: border-box;
+}
+
+#submitButton {
+  color: #fff;
+  background-color: #00aeef;
+  width: clamp(75px, 10vw, 133px);
+  height: clamp(58px, 10vw, 87px);
+  font-family: "br_omegablack", sans-serif;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  border: none;
+  cursor: pointer;
+}
+
+#form_container p {
+  font-size: clamp(16px, 3vw, 22px);
+  font-family: "br_omegamedium", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: medium;
+  color: #1e1e1e;
+  padding-top: 50px;
+  padding-bottom: 120px;
+  max-width: 554px;
+}
+
+/* FORM STYLES -------------------------------*/
+
+/* FOOTER STYLES *******************************/
+
+#footer_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 15vw;
+  box-sizing: border-box;
+
+  background-image: url("./images/footer_imgs/footerbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+}
+
+#footer_container p {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 3vw, 40px);
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+#footer_icons {
+  display: flex;
+
+  gap: clamp(20px, 10vw, 81px);
+}
+
+.icon {
+  width: clamp(20px, 3vw, 50px);
+  height: clamp(20px, 3vw, 50px);
+}
+
+/* FOOTER STYLES -------------------------------*/
+
+/* MEDIA */
+
+@media only screen and (max-width: 1460px) {
+  #info_container {
+    flex-direction: column;
+    max-height: 100%;
+    background-size: 150vw auto;
+    background-position: 20vw 70px;
+  }
+
+  #info_container div h3 {
+    padding-top: 40px;
+    padding-left: 40px;
+  }
+
+  #info_container div p {
+    padding-left: 40px;
+  }
+  #sarajevoWrapper {
+    width: 100%;
+  }
+
+  #sarajevo {
+    width: 100%;
+    height: auto;
+  }
+
+  #ghost img {
+    z-index: 1000;
+
+    max-width: 80%;
+
+    right: 0;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  #roster {
+    gap: 35px;
+  }
+  #footer_container {
+    height: 25vw;
+    padding-bottom: 60px;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 1265px) {
+  #menu_items {
+    flex-direction: column;
+    top: 100%;
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-23%);
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  /* restore header sizing for small screens */
+  #menuHeaderIcon {
+    width: auto;
+    height: 46px;
+    margin-right: 30px;
+  }
+
+  #boomHeaderLogo {
+    height: auto;
+    padding-left: 34px;
+  }
+
+  #header_container {
+    height: 95px;
+  }
+
+  #landing_container {
+    margin-top: 145px;
+  }
+
+  #header_date_container {
+    height: auto;
+    top: 95px;
+  }
+  #schedule_container h3 {
+    padding-top: 20px;
+  }
+
+  #footer_container {
+    height: 25vw;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  #form_container p {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .timeEventContainer {
+    gap: 0px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  #roster {
+    gap: 35px;
+  }
+  #footer_container {
+    height: 35vw;
+    padding-bottom: 60px;
+    padding-top: 40px;
+  }
+  #ghost img {
+    z-index: 1000;
+    max-width: 90%;
+    right: 0;
+    margin-top: 100px;
+  }
+}
