@@ -34,8 +34,19 @@ window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
   const headerHeight = header.offsetHeight;
 
-  if (currentScroll > lastScroll) {
-    // Scrolling down → hide header
+  // Get section boundaries
+  const landingSection = document.getElementById("landing_container");
+  const infoSection = document.getElementById("info_container");
+  const landingBottom =
+    landingSection.getBoundingClientRect().bottom + window.pageYOffset;
+  const infoRect = infoSection.getBoundingClientRect();
+  const infoTop = infoRect.top + window.pageYOffset;
+
+  // Only allow header hiding after the landing section
+  const isPastLanding = currentScroll >= landingBottom;
+
+  if (currentScroll > lastScroll && isPastLanding) {
+    // Scrolling down after landing section → hide header
     header.style.transform = "translateY(-100%)";
     menuItems.classList.remove("menu-visible");
     menuOpen = false;
@@ -43,7 +54,7 @@ window.addEventListener("scroll", () => {
     // headerDate moves to top of page
     headerDate.style.top = "0";
   } else {
-    // Scrolling up → show header
+    // Scrolling up or outside info section → show header
     header.style.transform = "translateY(0)";
     // headerDate moves just below header
     headerDate.style.top = `${headerHeight}px`;

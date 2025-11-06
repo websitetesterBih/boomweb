@@ -613,6 +613,8 @@ input:focus {
   font-size: clamp(16px, 3vw, 24px);
   letter-spacing: 2px;
   color: #fff;
+  padding: 10px;
+  padding-bottom: 0px;
 }
 
 #footer_icons {
@@ -680,6 +682,10 @@ input:focus {
     background: rgba(255, 255, 255, 1);
     transform: translateY(-23%);
     padding-top: 20px;
+  }
+
+  #footer_container {
+    height: 15vw;
   }
 }
 
@@ -793,19 +799,9 @@ input:focus {
     gap: 35px;
   }
   #footer_container {
-    height: 35vw;
-    padding-bottom: 60px;
-    padding-top: 40px;
-  }
-}
-
-@media only screen and (max-width: 475px) {
-  #roster {
-    gap: 35px;
-  }
-  #footer_container {
     height: 25vw;
     padding-bottom: 60px;
+    padding-top: 55px;
   }
   #ghost img {
     max-width: 115%;
