@@ -5,6 +5,15 @@ const landingContainer = document.getElementById("landing_container");
 const menuItems = document.getElementById("menu_items");
 const menuButton = document.getElementById("menuButton");
 const menuIcon = document.getElementById("menuHeaderIcon");
+const languageButton = document.getElementById("language_button");
+const languageFlag = document.getElementById("language_flag");
+
+// Language state
+let currentLanguage = "en";
+let translations = {
+  en: null,
+  bs: null,
+};
 let menuOpen = false;
 
 // Helper: place the date container either at the top (when header is hidden)
@@ -66,6 +75,135 @@ window.addEventListener("scroll", () => {
 // Also call once immediately in case the script loads after DOM rendering
 // but before the `load` event (ensures correct initial placement).
 updateHeaderDatePosition();
+
+// Language switching functionality
+async function loadTranslations() {
+  // Use fetch + Promise.all to load both translation files in parallel.
+  // Note: when serving files via file:// in some browsers this will fail
+  // due to CORS — run a local web server (http://) when testing.
+  try {
+    const [enResp, bsResp] = await Promise.all([
+      fetch("./en.json"),
+      fetch("./bs.json"),
+    ]);
+
+    if (!enResp.ok || !bsResp.ok) {
+      throw new Error(
+        `Failed to fetch translations: en ${enResp.status}, bs ${bsResp.status}`
+      );
+    }
+
+    translations.en = await enResp.json();
+    translations.bs = await bsResp.json();
+    updatePageLanguage();
+  } catch (err) {
+    console.error("Error loading translations:", err);
+    // Try a sequential fallback (best-effort) so partial loads still work
+    try {
+      const enResp = await fetch("./en.json");
+      if (enResp.ok) translations.en = await enResp.json();
+
+      const bsResp = await fetch("./bs.json");
+      if (bsResp.ok) translations.bs = await bsResp.json();
+
+      if (translations.en || translations.bs) updatePageLanguage();
+    } catch (err2) {
+      console.error("Secondary fetch attempt failed:", err2);
+    }
+  }
+}
+
+function updatePageLanguage() {
+  const t = translations[currentLanguage];
+  if (!t) return;
+
+  // Update menu items
+  document.querySelectorAll(".menu-item").forEach((item, index) => {
+    item.textContent = Object.values(t.menu)[index];
+  });
+
+  // Update header date
+  document.querySelector("#date span").textContent = t.header.saveTheDate;
+  document.querySelector("#date").lastChild.textContent =
+    " " + t.header.dateLocation;
+
+  // Update landing title
+  const titleWords = t.landing.title.split(" ");
+  landingContainer.querySelector("h3").innerHTML =
+    titleWords.slice(0, 2).join(" ") +
+    " <br/>" +
+    titleWords[2] +
+    " <br/>" +
+    titleWords[3];
+
+  // Update info section
+  document.querySelector("#info_container h3").textContent = t.info.title;
+  document.querySelector("#info_container p").innerHTML =
+    t.info.welcomeText + "<br/><br/>" + t.info.description;
+
+  // Update meet section
+  document.querySelector("#meet_container h3").textContent = t.meet.title;
+  document.querySelectorAll(".person").forEach((person, index) => {
+    const speaker = Object.values(t.meet.speakers)[index];
+    person.querySelector("h4").textContent = speaker.name;
+    person.querySelector("p").innerHTML = speaker.topics.join("<br/>");
+  });
+
+  // Update schedule section
+  document.querySelector("#schedule_container h3").textContent =
+    t.schedule.title;
+  document.querySelector("#schedule_day1 .dayText1").textContent =
+    t.schedule.day1.date;
+  document.querySelector("#schedule_day1 .dayText2").textContent =
+    t.schedule.day1.dayLabel;
+  document.querySelector("#schedule_day2 .dayText1").textContent =
+    t.schedule.day2.date;
+  document.querySelector("#schedule_day2 .dayText2").textContent =
+    t.schedule.day2.dayLabel;
+
+  // Update form
+  document.querySelector("#form_container h3").textContent = t.form.title;
+  document.querySelectorAll("#excelForm input").forEach((input) => {
+    input.placeholder = t.form.fields[input.name];
+  });
+  document.querySelector("#submitButton").textContent = t.form.submit;
+  document.querySelector("#form_container p").innerHTML =
+    t.form.note + "<br/>" + t.form.bank;
+
+  // Update fees section
+  document.querySelector("#fees_container h3").textContent = t.fees.title;
+  const feesContainer = document.querySelector("#fees_textcontainer");
+  const feesParagraphs = feesContainer.querySelectorAll("p");
+
+  // Update each paragraph in order
+  feesParagraphs[0].textContent = t.fees.mainText;
+  feesParagraphs[1].textContent = t.fees.invoiceNote;
+  feesParagraphs[2].textContent = t.fees.registrationFees;
+  feesParagraphs[3].innerHTML = `<span class="fees_black">${t.fees.earlyRegistration.title}</span> <br/>${t.fees.earlyRegistration.text}`;
+  feesParagraphs[4].innerHTML = `<span class="fees_black">${t.fees.lateRegistration.title}</span> <br/>${t.fees.lateRegistration.text}`;
+  feesParagraphs[5].textContent = t.fees.dailyRegistration;
+  feesParagraphs[6].textContent = t.fees.entitlements;
+  feesParagraphs[7].textContent = t.fees.dailyNote;
+  feesParagraphs[8].textContent = t.fees.importantNote;
+  feesParagraphs[9].innerHTML = `${t.fees.paymentInfo} <br/>${t.fees.bankInfo}`;
+
+  // Update footer
+  document.querySelector("#footer_container p").textContent = t.footer.text;
+
+  // Update flag
+  languageFlag.src =
+    currentLanguage === "en"
+      ? "./images/header_imgs/flagofuk.png"
+      : "./images/header_imgs/flagbosnia.png";
+}
+
+languageButton.addEventListener("click", () => {
+  currentLanguage = currentLanguage === "en" ? "bs" : "en";
+  updatePageLanguage();
+});
+
+// Load translations when the page loads
+loadTranslations();
 
 // Handle menu toggling
 menuButton.addEventListener("click", (e) => {

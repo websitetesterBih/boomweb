@@ -154,6 +154,15 @@ a {
   position: relative;
 }
 
+#language_flag {
+  display: block;
+  width: 40px;
+  height: auto;
+  border-radius: 3px;
+
+  margin-right: 50px;
+}
+
 #menuButton {
   margin-right: var(--menu-gap);
   z-index: 1001;
@@ -497,6 +506,54 @@ a {
 
 /* SCHEDULE STYLES -------------------------------*/
 
+/* FEES STYLES *******************************/
+#fees_container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: "br_omega300", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: normal;
+  font-size: clamp(15.6px, 4vw, 28px);
+  line-height: clamp(15.4px, 7vw, 35px);
+
+  background-color: #b9e5fb;
+  color: #1e1e1e;
+
+  padding: 20px 20px 6vw;
+}
+
+#fees_container h3 {
+  font-family: "br_omegamedium", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: normal;
+  font-size: clamp(33px, 5vw + 1rem, 59.5px);
+  color: #00ade9;
+  line-height: 29px;
+}
+
+#fees_textcontainer {
+  max-width: clamp(311px, 80vw, 554px);
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+
+.fees_black {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+}
+
+#fees_small {
+  font-size: clamp(12px, 3vw, 23px);
+  line-height: clamp(13.8px, 5.5vw, 25px);
+}
+
+/* FEES STYLES -------------------------------*/
+
 /* FORM STYLES *******************************/
 
 #form_container {
@@ -755,6 +812,12 @@ input:focus {
   }
   #landing_container {
     margin-top: 120px;
+  }
+
+  #language_flag {
+    width: 30px;
+    margin-right: 30px;
+    margin-top: 5px;
   }
 }
 
