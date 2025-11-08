@@ -257,22 +257,31 @@ document.querySelectorAll(".menu-item").forEach((link) => {
 const form = document.getElementById("excelForm");
 
 form.addEventListener("submit", async (e) => {
-  e.preventDefault(); // prevent default form submission
+  e.preventDefault(); // Stop normal form submission (no redirect)
 
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData);
+  // Collect form data into an object
+  const data = Object.fromEntries(new FormData(form));
 
   try {
-    const res = await fetch("https://boombackend-4g79.onrender.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const response = await fetch(
+      "https://boombackend-4g79.onrender.com/submit", // Your backend URL
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
-    alert("Form submitted successfully"); // or show a message on the page instead of alert
-    form.reset(); // optional: clear form fields
+    if (response.ok) {
+      alert("Form submitted successfully!");
+      form.reset(); // Optional: clear the form after submission
+    } else {
+      alert("Error submitting form.");
+    }
   } catch (err) {
-    alert("Error submitting data");
+    alert("Network or server error.");
     console.error(err);
   }
 });
