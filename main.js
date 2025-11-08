@@ -253,3 +253,26 @@ document.querySelectorAll(".menu-item").forEach((link) => {
     }
   });
 });
+
+const form = document.getElementById("excelForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // prevent default form submission
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+
+  try {
+    const res = await fetch("https://boombackend-4g79.onrender.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    alert("Form submitted successfully"); // or show a message on the page instead of alert
+    form.reset(); // optional: clear form fields
+  } catch (err) {
+    alert("Error submitting data");
+    console.error(err);
+  }
+});
