@@ -732,7 +732,7 @@ input:focus {
   }
 }
 
-@media only screen and (max-width: 1265px) {
+@media only screen and (max-width: 1300px) {
   #menu_items {
     flex-direction: column;
     top: 166%;
@@ -836,7 +836,7 @@ input:focus {
     background: rgba(255, 255, 255, 1);
     transform: translateY(-35%);
     width: 101vw;
-    top: 380%;
+    top: 405%;
     border-bottom-left-radius: 2.5rem;
     border-bottom-right-radius: 2.5rem;
     padding-right: 0;
