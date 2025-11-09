@@ -46,6 +46,14 @@ body {
   --schedule-padding-bottom: clamp(80px, 12vw, 150px);
   --schedule-heading-pt: clamp(28px, 5vw, 78px);
   --timeevent-maxwidth: clamp(280px, 50vw, 572px);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
 }
 
 button {
