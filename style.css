@@ -227,7 +227,7 @@ a {
   align-items: center;
   width: 100vw;
   height: var(--date-height);
-  background-color: #f2f2f3;
+  background-color: #e68a40;
   transition: top 0.3s ease;
   text-align: center;
 }
@@ -515,13 +515,8 @@ a {
 /* SCHEDULE STYLES -------------------------------*/
 
 /* FEES STYLES *******************************/
-#fees_container {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: flex-start;
-  align-items: center;
 
+.fees-section {
   font-family: "br_omega300", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
     sans-serif;
   font-weight: normal;
@@ -530,34 +525,66 @@ a {
 
   background-color: #b9e5fb;
   color: #1e1e1e;
-
   padding: 20px 20px 6vw;
 }
 
-#fees_container h3 {
-  font-family: "br_omegamedium", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+.fees-title {
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
     sans-serif;
-  font-weight: normal;
-  font-size: clamp(33px, 5vw + 1rem, 59.5px);
+  font-weight: bold;
   color: #00ade9;
-  line-height: 29px;
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: clamp(24px, 5vw + 1rem, 59.5px);
 }
 
-#fees_textcontainer {
-  max-width: clamp(311px, 80vw, 554px);
-  text-align: left;
-  letter-spacing: 0.05em;
+.fees-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.fees_black {
+.fees-block {
+  margin-bottom: 60px;
+  font-size: clamp(15.6px, 3vw, 28px);
+}
+
+.fees-block h3 {
+  font-weight: bold;
+  margin-bottom: 24px;
+  font-size: clamp(15.6px, 4vw, 36px);
   font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
     sans-serif;
   font-weight: bold;
 }
 
-#fees_small {
-  font-size: clamp(12px, 3vw, 23px);
-  line-height: clamp(13.8px, 5.5vw, 25px);
+.fees-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.3);
+}
+
+.fees-row-2col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.fees-row-1col {
+  display: block;
+}
+
+.blackTextFees {
+  font-family: "br_omegablack", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+    sans-serif;
+  font-weight: bold;
+}
+
+.thickBorderBottom {
+  border-bottom: 1.5px solid rgba(30, 30, 30, 0.8);
+}
+
+.noBorder {
+  border-bottom: none;
 }
 
 /* FEES STYLES -------------------------------*/
