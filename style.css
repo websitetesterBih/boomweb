@@ -232,7 +232,7 @@ a {
   text-align: center;
 }
 
-#date {
+#saveTheDate {
   font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
     sans-serif;
   font-weight: bold;
@@ -251,7 +251,7 @@ a {
   justify-content: center;
   align-items: center;
   height: var(--landing-height);
-  background-image: url("./images/landing_imgs/landingBackground.jpg");
+  background-image: url("./images/landing_imgs/landingBackground.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -596,6 +596,7 @@ a {
   flex-direction: column;
   align-items: center;
   flex: 1 1 auto; /* allows shrinking */
+  padding-bottom: 120px;
 }
 
 #form_container h3 {
@@ -648,7 +649,7 @@ input:-webkit-autofill {
   box-sizing: border-box;
 }
 
-#submitButton {
+#form_submit {
   color: #fff;
   background-color: #00aeef;
   width: var(--submit-width);
@@ -659,17 +660,6 @@ input:-webkit-autofill {
   letter-spacing: 1.4px;
   border: none;
   cursor: pointer;
-}
-
-#form_container p {
-  font-size: clamp(16px, 3vw, 22px);
-  font-family: "br_omegamedium", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
-    sans-serif;
-  font-weight: medium;
-  color: #1e1e1e;
-  padding-top: 50px;
-  padding-bottom: 120px;
-  max-width: 554px;
 }
 
 input:focus {
@@ -690,7 +680,7 @@ input:focus {
   height: var(--footer-height);
   box-sizing: border-box;
 
-  background-image: url("./images/footer_imgs/footerbackground.jpg");
+  background-image: url("./images/footer_imgs/footerbackground.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -822,10 +812,6 @@ input:focus {
 }
 
 @media only screen and (max-width: 660px) {
-  #form_container p {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
   .timeEventContainer {
     gap: 20px;
   }

@@ -1,149 +1,74 @@
 {
-  "menu": {
-    "boom2026": "Boom2026",
-    "saveTheBone": "Sačuvaj kost",
-    "meetBoomers": "Upoznajte bumere",
-    "schedule": "Raspored",
-    "fees": "Kotizacije",
-    "registerNow": "Registruj se"
-  },
-  "header": {
-    "saveTheDate": "POŠALJI ODMAH!"
-  },
-  "landing": {
-    "title": "Balkanski Osstem oseointegrativni sastanak"
-  },
-  "info": {
-    "title": "Sačuvaj kost",
-    "welcomeText": "Privilegija nam je da vas pozdravimo na Balkanskom Osstem oseointegrativnom sastanku 2026 (BOOM 26), koji će se održati u prelijepom multikulturalnom gradu Sarajevu od 00-00 Mjeseca 2026.",
-    "description": "U Sarajevu ćemo se okupiti u vrijeme brzih promjena u nauci, tehnologiji i društvu. Stomatologija ne samo da mora držati korak s ovim promjenama, već ih mora i oblikovati. Ovaj sastanak će pružiti izvanrednu platformu za istraživanje najnovijih istraživanja, inovacija i kliničke prakse, uz istovremeno uključivanje u smislen dijalog o budućnosti naše profesije."
-  },
-  "meet": {
-    "title": "Upoznajte bumere",
-    "speakers": {
-      "nicolasWidmer": {
-        "name": "Dr. Nicolas Widmer",
-        "topics": ["Praktična primjena taper kita", "Protetika na implantima"]
-      },
-      "leonardoMuzzi": {
-        "name": "Dr. Leonardo Muzzi",
-        "topics": ["Praktična primjena Cas kita", "Imedijatna implantacija"]
-      },
-      "darkoBozic": {
-        "name": "Prof. dr. Darko Božić",
-        "topics": ["Sinus lift"]
-      },
-      "zoranTatic": {
-        "name": "Prof. dr. Zoran Tatić",
-        "topics": ["Dugi implanti u posteriornoj maksili"]
-      },
-      "vladimirBiocanin": {
-        "name": "Prof. dr. Vladimir Biočanin",
-        "topics": ["Split crest sa Esset kitom"]
-      }
-    }
-  },
-  "schedule": {
-    "title": "Raspored",
-    "day1": {
-      "date": "15/05/2026",
-      "dayLabel": "(Dan 1)",
-      "events": {
-        "handson": {
-          "time": "16.00 - 18.00h",
-          "title": "PRAKTIČNI RAD Taper Kit",
-          "speaker": "Dr. Nicolas Widmer (CH)"
-        }
-      }
-    },
-    "day2": {
-      "date": "16/05/2026",
-      "dayLabel": "(Dan 2)",
-      "events": {
-        "registration": {
-          "time": "08.30 - 09.30h",
-          "title": "Registracija učesnika"
-        },
-        "opening": {
-          "time": "09.30h",
-          "title": "Otvaranje kongresa"
-        },
-        "sinusLift": {
-          "time": "10.00 - 11.00h",
-          "title": "Sinus lift",
-          "speaker": "Prof. Darko božić (HR)"
-        },
-        "implants": {
-          "time": "11.15 - 12.15h",
-          "title": "Dugi Osstem implanti u posteriornoj maksili",
-          "speaker": "Prof. Zoran Tatić (RS)"
-        },
-        "coffee": {
-          "time": "12.15 - 13.00h",
-          "title": "Pauza za kafu"
-        },
-        "splitCrest": {
-          "time": "13.00 - 14.00h",
-          "title": "Split Crest sa Esset Kitom",
-          "speaker": "Prof. Vladimir Biočanin (RS)"
-        },
-        "lunch": {
-          "time": "14.00 - 15.00h",
-          "title": "Ručak"
-        },
-        "implantPlacement": {
-          "time": "15.00 - 16.00h",
-          "title": "Imedijatna implantacija",
-          "speaker": "Dr. Leonardo Muzzi (IT)"
-        },
-        "prosthetic": {
-          "time": "16.50 - 17.15h",
-          "title": "Protetika na implantima",
-          "speaker": "Dr. Nicolas Widmer (CH)"
-        },
-        "party": {
-          "time": "20.00h",
-          "title": "BOOM PARTY"
-        }
-      }
-    }
-  },
-  "form": {
-    "title": "Registruj se",
-    "fields": {
-      "name": "Ime",
-      "surname": "Prezime",
-      "title": "Titula",
-      "organization": "Organizacija",
-      "city": "Grad",
-      "country": "Država",
-      "phone": "Telefon"
-    },
-    "submit": "Pošalji",
-    "note": "Napomena: Za uplate do Mjesec 00, 2026. ostvaruje se povoljnija kotizacija. Kotizacija se može uplatiti na broj računa:",
-    "bank": "Banka 0000000000000"
-  },
-  "fees": {
-    "title": "Kotizacije",
-    "mainText": "Da bi vaša kotizacija bila validna, molimo vas da popunite prijavu i izvršite uplatu do predviđenog roka - do 00 Mjeseca 2025. u slučaju rane registracije, i do 00 Mjeseca 2026. u slučaju kasne registracije.",
-    "invoiceNote": "Molimo vas da imate na umu da će vam faktura biti poslana nakon Kongresa, do kraja Mjeseca 2026.",
-    "registrationFees": "Kotizacije za BOOM sastanak su sljedeće:",
-    "earlyRegistration": {
-      "title": "• Rana kotizacija",
-      "text": "(za uplate do 00 Mjeseca 2025): 000 KM"
-    },
-    "lateRegistration": {
-      "title": "• Kasna kotizacija",
-      "text": "(za uplate od 00 Mjeseca 2026): 000 KM"
-    },
-    "dailyRegistration": "Dnevna kotizacija* (za uplate nakon 00.00.2024)",
-    "entitlements": "Učesnici sa uredno plaćenom BOOM kotizacijom nakon registracije i sa važećom akreditacijom Sastanka imaju pravo na: prisustvo svim kongresnim predavanjima i izložbama, kongresni materijal, knjigu sažetaka, certifikat, kafe pauze i ručak.",
-    "dailyNote": "* Dnevna kotizacija ne uključuje kongresni materijal, knjigu sažetaka, certifikat, kafe pauze i ručak.",
-    "importantNote": "NAPOMENA: Uredno plaćena kotizacija ne uključuje prisustvo networkig večeri i hotelski smještaj.",
-    "paymentInfo": "Kotizacija za BOOM sastanak se može uplatiti na broj računa:",
-    "bankInfo": "Banka (broj računa: 0000000000000)"
-  },
-  "footer": {
-    "text": "Balkanski Osstem oseointegrativni sastanak"
-  }
+  "boom2026": "Boom2026",
+  "saveTheBone": "Sačuvaj kost",
+  "meetBoomers": "Upoznaj boomere",
+  "schedule": "Raspored",
+  "fees": "Naknade",
+  "registerNow": "Registruj se",
+  "saveTheDate": "POŠALJI SADA!",
+  "landing_title": "Balkan Osstem <br /> osseointegration <br /> meeting",
+  "info_title": "Sačuvaj kost",
+  "info_welcome": "Čast nam je da vam poželimo dobrodošlicu na Balkan Osstem osseointegration meeting 2026 (BOOM 26), koji će se održati u predivnom multikulturalnom gradu Sarajevu 15-16 maja 2026. godine.",
+  "info_description": "U Sarajevu ćemo se okupiti u vrijeme brzih promjena u nauci, tehnologiji i društvu. Dentalna medicina ne samo da mora pratiti te promjene, već i pomoći u oblikovanju istih. Ovaj Kongres će pružiti izuzetnu platformu za istraživanje najnovijih dostignuća, inovacija i kliničkih praksi, uz mogućnost angažiranja u smislenom dijalogu o budućnosti naše profesije.",
+  "meet_title": "Upoznaj boomere",
+  "schedule_title": "Raspored",
+  "schedule_day1_date": "15/05/2026",
+  "schedule_day1_label": "(Dan 1)",
+  "schedule_day2_date": "16/05/2026",
+  "schedule_day2_label": "(Dan 2)",
+  "fees_title": "Naknade",
+  "fees_lectures_title": "Predavanja",
+  "fees_lectures_header": "Vrsta registracije",
+  "fees_lectures_deadline": "Rok",
+  "fees_lectures_fee": "Naknada",
+  "fees_lectures_deadline2": "Rok",
+  "fees_lectures_fee2": "Naknada",
+  "fees_combo_fee": "Naknada",
+  "fees_lectures_early_type": "Rana",
+  "fees_lectures_early_deadline": "do 15. aprila",
+  "fees_lectures_early_fee": "200KM",
+  "fees_lectures_late_type": "Kasna",
+  "fees_lectures_late_deadline": "nakon 15. aprila",
+  "fees_lectures_late_fee": "250KM",
+  "fees_handson_title": "Praktični kursevi (Hands-On)",
+  "fees_handson_header": "Vrsta registracije",
+  "fees_handson_early_type": "Rana",
+  "fees_handson_early_deadline": "do 15. aprila",
+  "fees_handson_early_fee": "400KM",
+  "fees_handson_late_type": "Kasna",
+  "fees_handson_late_deadline": "nakon 15. aprila",
+  "fees_handson_late_fee": "600KM",
+  "fees_combo_title": "Predavanja + Praktični kursevi",
+  "fees_combo_header": "Paket – Naknada",
+  "fees_combo_1course_package": "Predavanja + 1 kurs po izboru",
+  "fees_combo_1course_fee": "500KM",
+  "fees_combo_2course_package": "Predavanja + 2 kursa po izboru",
+  "fees_combo_2course_fee": "800KM",
+  "fees_special_title": "Specijalne ponude",
+  "fees_special_implants_condition": "20 Hiossen implantata i hirurški set",
+  "fees_special_implants_benefit": "Besplatna predavanja + oba praktična kursa",
+  "fees_special_1000km_condition": "Potroši 1000KM na odabrane artikle",
+  "fees_special_1000km_benefit": "Besplatna predavanja",
+  "fees_special_2000km_condition": "Potroši 2000KM na odabrane artikle",
+  "fees_special_2000km_benefit": "Besplatna predavanja + 1 praktični kurs po izboru",
+  "form_title": "Registruj se",
+  "form_submit": "Pošalji",
+  "form_name": "Ime",
+  "form_surname": "Prezime",
+  "form_title_label": "Titula",
+  "form_organization": "Organizacija",
+  "form_city": "Grad",
+  "form_country": "Država",
+  "form_phone": "Telefon",
+  "footer_text": "Balkan Osstem osseointegration meeting",
+  "speaker_nicolas": "Dr. Nicolas Widmer",
+  "speaker_nicolas_topics": "Hands on taper kit <br />Prosthetic in implants",
+  "speaker_leonardo": "Dr. Leonardo Muzzi",
+  "speaker_leonardo_topics": "Hands on Cas kit <br />Immediate implant placement",
+  "speaker_darko": "Prof. dr. Darko Božić",
+  "speaker_darko_topics": "Sinus lift",
+  "speaker_zoran": "Prof. dr. Zoran Tatić",
+  "speaker_zoran_topics": "Long implants in posterior maxilla",
+  "speaker_vladimir": "Prof. dr. Vladimir Biočanin",
+  "speaker_vladimir_topics": "Split crest with esset kit"
 }

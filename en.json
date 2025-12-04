@@ -1,149 +1,74 @@
 {
-  "menu": {
-    "boom2026": "Boom2026",
-    "saveTheBone": "Save the bone",
-    "meetBoomers": "Meet the boomers",
-    "schedule": "Schedule",
-    "fees": "Fees",
-    "registerNow": "Register now"
-  },
-  "header": {
-    "saveTheDate": "SUBMIT NOW!"
-  },
-  "landing": {
-    "title": "Balkan Osstem osseointegration meeting"
-  },
-  "info": {
-    "title": "Save the bone",
-    "welcomeText": "It is a privilege to welcome you to the Balkan Osstem osseointegration meeting 2026 (BOOM 26), to be held in the beautiful multicultural city of Sarajevo from 00-00 Month 2026.",
-    "description": "In Sarajevo, we will gather at a time of rapid change in science, technology, and society. Dentistry must not only keep pace with these changes but help shape them. This Meeting will provide an exceptional platform to explore the latest research, innovations, and clinical practices, while also engaging in meaningful dialogue about the future of our profession."
-  },
-  "meet": {
-    "title": "Meet the boomers",
-    "speakers": {
-      "nicolasWidmer": {
-        "name": "Dr. Nicolas Widmer",
-        "topics": ["Hands on taper kit", "Prosthetic in implants"]
-      },
-      "leonardoMuzzi": {
-        "name": "Dr. Leonardo Muzzi",
-        "topics": ["Hands on Cas kit", "Immediate implant placement"]
-      },
-      "darkoBozic": {
-        "name": "Prof. dr. Darko Božić",
-        "topics": ["Sinus lift"]
-      },
-      "zoranTatic": {
-        "name": "Prof. dr. Zoran Tatić",
-        "topics": ["Long implants in posterior maxilla"]
-      },
-      "vladimirBiocanin": {
-        "name": "Prof. dr. Vladimir Biočanin",
-        "topics": ["Split crest with esset kit"]
-      }
-    }
-  },
-  "schedule": {
-    "title": "Schedule",
-    "day1": {
-      "date": "15/05/2026",
-      "dayLabel": "(Day 1)",
-      "events": {
-        "handson": {
-          "time": "16.00 - 18.00h",
-          "title": "HANDS-ON Taper Kit",
-          "speaker": "Dr. Nicolas Widmer (CH)"
-        }
-      }
-    },
-    "day2": {
-      "date": "16/05/2026",
-      "dayLabel": "(Day 2)",
-      "events": {
-        "registration": {
-          "time": "08.30 - 09.30h",
-          "title": "Participant registration"
-        },
-        "opening": {
-          "time": "09.30h",
-          "title": "Congress opening"
-        },
-        "sinusLift": {
-          "time": "10.00 - 11.00h",
-          "title": "Sinus lift",
-          "speaker": "Prof. Darko božić (HR)"
-        },
-        "implants": {
-          "time": "11.15 - 12.15h",
-          "title": "Long Osstem implants in posterior maxilla",
-          "speaker": "Prof. Zoran Tatić (RS)"
-        },
-        "coffee": {
-          "time": "12.15 - 13.00h",
-          "title": "Coffee break"
-        },
-        "splitCrest": {
-          "time": "13.00 - 14.00h",
-          "title": "Split Crest with Esset Kit",
-          "speaker": "Prof. Vladimir Biočanin (RS)"
-        },
-        "lunch": {
-          "time": "14.00 - 15.00h",
-          "title": "Lunch"
-        },
-        "implantPlacement": {
-          "time": "15.00 - 16.00h",
-          "title": "Immediate implant placement",
-          "speaker": "Dr. Leonardo Muzzi (IT)"
-        },
-        "prosthetic": {
-          "time": "16.50 - 17.15h",
-          "title": "Prosthetic on implants",
-          "speaker": "Dr. Nicolas Widmer (CH)"
-        },
-        "party": {
-          "time": "20.00h",
-          "title": "BOOM PARTY"
-        }
-      }
-    }
-  },
-  "form": {
-    "title": "Register now",
-    "fields": {
-      "name": "Name",
-      "surname": "Surname",
-      "title": "Title",
-      "organization": "Organization",
-      "city": "City",
-      "country": "Country",
-      "phone": "Phone"
-    },
-    "submit": "Send",
-    "note": "Note: For payments until Month 00, 2026. a more favorable registration fee is achieved. The registration fee can be paid via transaction account number:",
-    "bank": "Bank 0000000000000"
-  },
-  "fees": {
-    "title": "Fees",
-    "mainText": "In order for your registration fee to be in order, please fill out the application and make the payment by the scheduled deadline - 00 Month 2025 in case of early registration, and until 00 Month 2026 in case of late registration.",
-    "invoiceNote": "Please keep in mind that the invoice will be sent to you after the Congress, until the end of Month 2026.",
-    "registrationFees": "Registration fees for the BOOM Meeting are as follows:",
-    "earlyRegistration": {
-      "title": "• Early registration fee",
-      "text": "(for payments until 00 Month 2025): 000 KM"
-    },
-    "lateRegistration": {
-      "title": "• Late registration fee",
-      "text": "(for payments from 00 Month 2026): 000 KM"
-    },
-    "dailyRegistration": "Daily registration fee* (for payments after 00.00.2024)",
-    "entitlements": "Attendees with a duly paid BOOM Meeting registration fee after registration, and with a valid Meeting accreditation are entitled to: attend all Congress lectures and exhibitions, congress material, book of abstracts, certificate, coffee and lunch breaks.",
-    "dailyNote": "* Daily registration fee does not include congress material, book of abstracts, certificate, coffee and lunch breaks.",
-    "importantNote": "NOTE: Duly paid registration fee does not include attendance to the networking dinner and hotel accommodation.",
-    "paymentInfo": "The registration fee for BOOM Meeting can be paid via transaction account number:",
-    "bankInfo": "Bank (account number: 0000000000000)"
-  },
-  "footer": {
-    "text": "Balkan Osstem osseointegration meeting"
-  }
+  "boom2026": "Boom2026",
+  "saveTheBone": "Save the bone",
+  "meetBoomers": "Meet the boomers",
+  "schedule": "Schedule",
+  "fees": "Fees",
+  "registerNow": "Register now",
+  "saveTheDate": "SUBMIT NOW!",
+  "landing_title": "Balkan Osstem <br /> osseointegration <br /> meeting",
+  "info_title": "Save the bone",
+  "info_welcome": "It is a privilege to welcome you to the Balkan Osstem osseointegration meeting 2026 (BOOM 26), to be held in the beautiful multicultural city of Sarajevo from 15-16 May 2026.",
+  "info_description": "In Sarajevo, we will gather at a time of rapid change in science, technology, and society. Dentistry must not only keep pace with these changes but help shape them. This Meeting will provide an exceptional platform to explore the latest research, innovations, and clinical practices, while also engaging in meaningful dialogue about the future of our profession.",
+  "meet_title": "Meet the boomers",
+  "schedule_title": "Schedule",
+  "schedule_day1_date": "15/05/2026",
+  "schedule_day1_label": "(Day 1)",
+  "schedule_day2_date": "16/05/2026",
+  "schedule_day2_label": "(Day 2)",
+  "fees_title": "Fees",
+  "fees_lectures_title": "Lectures",
+  "fees_lectures_header": "Registration type",
+  "fees_lectures_deadline": "Deadline",
+  "fees_lectures_fee": "Fee",
+  "fees_lectures_deadline2": "Deadline",
+  "fees_lectures_fee2": "Fee",
+  "fees_combo_fee": "Fee",
+  "fees_lectures_early_type": "Early",
+  "fees_lectures_early_deadline": "by April 15th",
+  "fees_lectures_early_fee": "200KM",
+  "fees_lectures_late_type": "Late",
+  "fees_lectures_late_deadline": "After April 15th",
+  "fees_lectures_late_fee": "250KM",
+  "fees_handson_title": "Hands-On Courses",
+  "fees_handson_header": "Registration type",
+  "fees_handson_early_type": "Early",
+  "fees_handson_early_deadline": "by April 15th",
+  "fees_handson_early_fee": "400KM",
+  "fees_handson_late_type": "Late",
+  "fees_handson_late_deadline": "After April 15th",
+  "fees_handson_late_fee": "600KM",
+  "fees_combo_title": "Lectures + Hands-On Courses",
+  "fees_combo_header": "Package - Fee",
+  "fees_combo_1course_package": "Lectures + 1 course of choice",
+  "fees_combo_1course_fee": "500KM",
+  "fees_combo_2course_package": "Lectures + 2 courses of choice",
+  "fees_combo_2course_fee": "800KM",
+  "fees_special_title": "Special Offers",
+  "fees_special_implants_condition": "20 Hiossen implants and a surgical kit",
+  "fees_special_implants_benefit": "Free lectures + both hands-on courses",
+  "fees_special_1000km_condition": "Spend 1000KM on selected items",
+  "fees_special_1000km_benefit": "Free lectures",
+  "fees_special_2000km_condition": "Spend 2000KM on selected items",
+  "fees_special_2000km_benefit": "Free lectures + 1 hands-on course of choice",
+  "form_title": "Register now",
+  "form_submit": "Send",
+  "form_name": "Name",
+  "form_surname": "Surname",
+  "form_title_label": "Title",
+  "form_organization": "Organization",
+  "form_city": "City",
+  "form_country": "Country",
+  "form_phone": "Phone",
+  "footer_text": "Balkan Osstem osseointegration meeting",
+  "speaker_nicolas": "Dr. Nicolas Widmer",
+  "speaker_nicolas_topics": "Hands on taper kit <br />Prosthetic in implants",
+  "speaker_leonardo": "Dr. Leonardo Muzzi",
+  "speaker_leonardo_topics": "Hands on Cas kit <br />Immediate implant placement",
+  "speaker_darko": "Prof. dr. Darko Božić",
+  "speaker_darko_topics": "Sinus lift",
+  "speaker_zoran": "Prof. dr. Zoran Tatić",
+  "speaker_zoran_topics": "Long implants in posterior maxilla",
+  "speaker_vladimir": "Prof. dr. Vladimir Biočanin",
+  "speaker_vladimir_topics": "Split crest with esset kit"
 }

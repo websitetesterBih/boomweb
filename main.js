@@ -76,133 +76,106 @@ window.addEventListener("scroll", () => {
 // but before the `load` event (ensures correct initial placement).
 updateHeaderDatePosition();
 
-// Language switching functionality
-async function loadTranslations() {
-  // Use fetch + Promise.all to load both translation files in parallel.
-  // Note: when serving files via file:// in some browsers this will fail
-  // due to CORS — run a local web server (http://) when testing.
+// 1. Load saved language or default to English
+let currentLang = localStorage.getItem("siteLang") || "en";
+
+// 2. Load the correct translation file and apply it
+async function loadLanguage(lang) {
   try {
-    const [enResp, bsResp] = await Promise.all([
-      fetch("./en.json"),
-      fetch("./bs.json"),
-    ]);
+    const res = await fetch(`./${lang}.json`);
+    const translations = await res.json();
 
-    if (!enResp.ok || !bsResp.ok) {
-      throw new Error(
-        `Failed to fetch translations: en ${enResp.status}, bs ${bsResp.status}`
-      );
+    // 3. Replace text for each ID
+    for (const id in translations) {
+      const el = document.getElementById(id);
+      if (el) {
+        // Special handling for elements with nested content (info_welcome has info_description span)
+        if (id === "info_welcome") {
+          // Reconstruct the paragraph with both welcome text and description span
+          const descSpan = el.querySelector("#info_description");
+          const descText = descSpan ? translations["info_description"] : "";
+          el.innerHTML =
+            translations[id] +
+            '<br /><br /><span id="info_description">' +
+            descText +
+            "</span>";
+        } else if (id === "info_description") {
+          // Skip—already handled above
+          continue;
+        } else {
+          // If translation contains HTML (e.g. <br />) use innerHTML,
+          // otherwise set textContent to avoid injecting HTML unintentionally.
+          const value = translations[id];
+          if (typeof value === "string" && /<[^>]+>/.test(value)) {
+            el.innerHTML = value;
+          } else {
+            el.textContent = value;
+          }
+        }
+      }
     }
-
-    translations.en = await enResp.json();
-    translations.bs = await bsResp.json();
-    updatePageLanguage();
   } catch (err) {
-    console.error("Error loading translations:", err);
-    // Try a sequential fallback (best-effort) so partial loads still work
-    try {
-      const enResp = await fetch("./en.json");
-      if (enResp.ok) translations.en = await enResp.json();
-
-      const bsResp = await fetch("./bs.json");
-      if (bsResp.ok) translations.bs = await bsResp.json();
-
-      if (translations.en || translations.bs) updatePageLanguage();
-    } catch (err2) {
-      console.error("Secondary fetch attempt failed:", err2);
-    }
+    console.error(`Error loading language file (${lang}):`, err);
   }
 }
 
-function updatePageLanguage() {
-  const t = translations[currentLanguage];
-  if (!t) return;
+// 4. Toggle language on button click
+document.getElementById("language_button").addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "bs" : "en";
+  localStorage.setItem("siteLang", currentLang);
+  loadLanguage(currentLang);
 
-  // Update menu items
-  document.querySelectorAll(".menu-item").forEach((item, index) => {
-    item.textContent = Object.values(t.menu)[index];
-  });
-
-  // Update header date
-  document.querySelector("#date span").textContent = t.header.saveTheDate;
-  document.querySelector("#date").lastChild.textContent = " ";
-
-  // Update landing title
-  const titleWords = t.landing.title.split(" ");
-  landingContainer.querySelector("h3").innerHTML =
-    titleWords.slice(0, 2).join(" ") +
-    " <br/>" +
-    titleWords[2] +
-    " <br/>" +
-    titleWords[3];
-
-  // Update info section
-  document.querySelector("#info_container h3").textContent = t.info.title;
-  document.querySelector("#info_container p").innerHTML =
-    t.info.welcomeText + "<br/><br/>" + t.info.description;
-
-  // Update meet section
-  document.querySelector("#meet_container h3").textContent = t.meet.title;
-  document.querySelectorAll(".person").forEach((person, index) => {
-    const speaker = Object.values(t.meet.speakers)[index];
-    person.querySelector("h4").textContent = speaker.name;
-    person.querySelector("p").innerHTML = speaker.topics.join("<br/>");
-  });
-
-  // Update schedule section
-  document.querySelector("#schedule_container h3").textContent =
-    t.schedule.title;
-  document.querySelector("#schedule_day1 .dayText1").textContent =
-    t.schedule.day1.date;
-  document.querySelector("#schedule_day1 .dayText2").textContent =
-    t.schedule.day1.dayLabel;
-  document.querySelector("#schedule_day2 .dayText1").textContent =
-    t.schedule.day2.date;
-  document.querySelector("#schedule_day2 .dayText2").textContent =
-    t.schedule.day2.dayLabel;
-
-  // Update form
-  document.querySelector("#form_container h3").textContent = t.form.title;
-  document.querySelectorAll("#excelForm input").forEach((input) => {
-    input.placeholder = t.form.fields[input.name];
-  });
-  document.querySelector("#submitButton").textContent = t.form.submit;
-  document.querySelector("#form_container p").innerHTML =
-    t.form.note + "<br/>" + t.form.bank;
-
-  // Update fees section
-  document.querySelector("#fees_container h3").textContent = t.fees.title;
-  const feesContainer = document.querySelector("#fees_textcontainer");
-  const feesParagraphs = feesContainer.querySelectorAll("p");
-
-  // Update each paragraph in order
-  feesParagraphs[0].textContent = t.fees.mainText;
-  feesParagraphs[1].textContent = t.fees.invoiceNote;
-  feesParagraphs[2].textContent = t.fees.registrationFees;
-  feesParagraphs[3].innerHTML = `<span class="fees_black">${t.fees.earlyRegistration.title}</span> <br/>${t.fees.earlyRegistration.text}`;
-  feesParagraphs[4].innerHTML = `<span class="fees_black">${t.fees.lateRegistration.title}</span> <br/>${t.fees.lateRegistration.text}`;
-  feesParagraphs[5].textContent = t.fees.dailyRegistration;
-  feesParagraphs[6].textContent = t.fees.entitlements;
-  feesParagraphs[7].textContent = t.fees.dailyNote;
-  feesParagraphs[8].textContent = t.fees.importantNote;
-  feesParagraphs[9].innerHTML = `${t.fees.paymentInfo} <br/>${t.fees.bankInfo}`;
-
-  // Update footer
-  document.querySelector("#footer_container p").textContent = t.footer.text;
-
-  // Update flag
-  languageFlag.src =
-    currentLanguage === "en"
-      ? "./images/header_imgs/flagofuk.png"
-      : "./images/header_imgs/flagbosnia.png";
-}
-
-languageButton.addEventListener("click", () => {
-  currentLanguage = currentLanguage === "en" ? "bs" : "en";
-  updatePageLanguage();
+  // Update flag image based on current language
+  const languageFlag = document.getElementById("language_flag");
+  if (languageFlag) {
+    languageFlag.src =
+      currentLang === "en"
+        ? "./images/header_imgs/flagofuk.webp"
+        : "./images/header_imgs/flagbosnia.webp";
+  }
 });
 
-// Load translations when the page loads
-loadTranslations();
+// Also update form input placeholders when language changes
+document.querySelectorAll("#excelForm input").forEach((input) => {
+  const origPlaceholder = input.getAttribute("data-placeholder-key");
+  if (!origPlaceholder) {
+    // Store original placeholder key
+    input.setAttribute("data-placeholder-key", input.name);
+  }
+});
+
+// Override the language loading to also handle form inputs and complex updates
+const originalLoadLanguage = loadLanguage;
+window.loadLanguage = async function (lang) {
+  await originalLoadLanguage(lang);
+
+  // Update form input placeholders
+  document.querySelectorAll("#excelForm input").forEach((input) => {
+    const key = input.getAttribute("data-placeholder-key") || input.name;
+    const formKey = `form_${key}`;
+
+    // Try to get translation from localStorage cache or fetch
+    fetch(`./${lang}.json`)
+      .then((res) => res.json())
+      .then((translations) => {
+        if (translations[formKey]) {
+          input.placeholder = translations[formKey];
+        }
+      });
+  });
+
+  // Update submit button text (special handling)
+  const submitBtn = document.getElementById("form_submit");
+  if (submitBtn) {
+    fetch(`./${lang}.json`)
+      .then((res) => res.json())
+      .then((translations) => {
+        if (translations["form_submit"]) {
+          submitBtn.textContent = translations["form_submit"];
+        }
+      });
+  }
+};
 
 // Handle menu toggling
 menuButton.addEventListener("click", (e) => {
@@ -282,5 +255,19 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     alert("Network or server error.");
     console.error(err);
+  }
+});
+
+// Initialize language on page load
+window.addEventListener("load", () => {
+  loadLanguage(currentLang);
+
+  // Set initial flag image
+  const languageFlag = document.getElementById("language_flag");
+  if (languageFlag) {
+    languageFlag.src =
+      currentLang === "en"
+        ? "./images/header_imgs/flagofuk.webp"
+        : "./images/header_imgs/flagbosnia.webp";
   }
 });

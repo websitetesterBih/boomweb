@@ -20,7 +20,7 @@
         <button id="language_button">
           <img
             id="language_flag"
-            src="./images/header_imgs/flagbosnia.png"
+            src="./images/header_imgs/flagbosnia.webp"
             alt="Language Flag"
           />
         </button>
@@ -33,12 +33,20 @@
           />
         </button>
         <div id="menu_items" class="menu-hidden">
-          <a href="#landing_container" class="menu-item">Boom2026</a>
-          <a href="#info_container" class="menu-item">Save the bone</a>
-          <a href="#meet_container" class="menu-item">Meet the boomers</a>
-          <a href="#schedule_container" class="menu-item">Schedule</a>
-          <a href="#fee_scroll" class="menu-item">Fees</a>
-          <a id="lastItem" href="#form_container" class="menu-item"
+          <a href="#landing_container" class="menu-item" id="boom2026"
+            >Boom2026</a
+          >
+          <a href="#info_container" class="menu-item" id="saveTheBone"
+            >Save the bone</a
+          >
+          <a href="#meet_container" class="menu-item" id="meetBoomers"
+            >Meet the boomers</a
+          >
+          <a href="#schedule_container" class="menu-item" id="schedule"
+            >Schedule</a
+          >
+          <a href="#fee_scroll" class="menu-item" id="fees">Fees</a>
+          <a href="#form_container" class="menu-item" id="registerNow"
             >Register now</a
           >
         </div>
@@ -46,13 +54,13 @@
     </div>
 
     <div id="header_date_container">
-      <h2 id="date">
+      <h2 id="saveTheDate">
         <span style="color: #fff">SUBMIT NOW!</span>
       </h2>
     </div>
 
     <div id="landing_container">
-      <h3>
+      <h3 id="landing_title">
         Balkan Osstem <br />
         osseointegration <br />
         meeting
@@ -60,52 +68,60 @@
 
       <img
         id="boomLandingLogo"
-        src="./images/landing_imgs/landingLogo.svg"
+        src="./images/landing_imgs/landingLogo.webp"
         alt="Boom logo 26 with text powered by ostem"
+        loading="lazy"
       />
     </div>
 
     <div id="info_container">
       <div id="bone_text">
-        <h3 style="color: #00ade9">Save the bone</h3>
-        <p style="color: #fff">
+        <h3 style="color: #00ade9" id="info_title">Save the bone</h3>
+        <p style="color: #fff" id="info_welcome">
           It is a privilege to welcome you to the Balkan Osstem osseointegration
           meeting 2026 (BOOM 26), to be held in the beautiful multicultural city
-          of Sarajevo from 00-00 Month 2026. <br />
-          <br />In Sarajevo, we will gather at a time of rapid change in
-          science, technology, and society. Dentistry must not only keep pace
-          with these changes but help shape them. This Meeting will provide an
-          exceptional platform to explore the latest research, innovations, and
-          clinical practices, while also engaging in meaningful dialogue about
-          the future of our profession.
+          of Sarajevo from 15-16 May 2026. <br /><br />
+          <span id="info_description"
+            >In Sarajevo, we will gather at a time of rapid change in science,
+            technology, and society. Dentistry must not only keep pace with
+            these changes but help shape them. This Meeting will provide an
+            exceptional platform to explore the latest research, innovations,
+            and clinical practices, while also engaging in meaningful dialogue
+            about the future of our profession.</span
+          >
         </p>
       </div>
       <span id="ghost"
         ><img
           id="infinity"
-          src="./images/info_section_imgs/infinity.png"
+          src="./images/info_section_imgs/infinity.webp"
           alt="infinity simbol"
+          loading="lazy"
       /></span>
 
       <div id="sarajevoWrapper">
         <img
-          src="./images/info_section_imgs/infoCityImage.jpg"
+          src="./images/info_section_imgs/infoCityImage.webp"
           id="sarajevo"
           alt="Image of the city Sarajevo"
+          loading="lazy"
         />
       </div>
     </div>
 
     <div id="meet_container">
-      <h3 style="color: #00aeef">Meet the boomers</h3>
+      <h3 style="color: #00aeef" id="meet_title">Meet the boomers</h3>
       <div id="roster">
         <div class="person">
           <img
-            src="./images/meet_imgs/nicolasPortrait.jpg"
+            src="./images/meet_imgs/nicolasPortrait.webp"
             alt="Medical Proffesional Portrait"
+            loading="lazy"
           />
-          <h4 style="color: #363535">Dr. Nicolas Widmer</h4>
-          <p style="color: #00aeef">
+          <h4 style="color: #363535" id="speaker_nicolas">
+            Dr. Nicolas Widmer
+          </h4>
+          <p style="color: #00aeef" id="speaker_nicolas_topics">
             Hands on taper kit <br />
             Prosthetic in implants
           </p>
@@ -113,11 +129,14 @@
 
         <div class="person">
           <img
-            src="./images/meet_imgs/leonardoPortrait.jpg"
+            src="./images/meet_imgs/leonardoPortrait.webp"
             alt="Medical Proffesional Portrait"
+            loading="lazy"
           />
-          <h4 style="color: #363535">Dr. Leonardo Muzzi</h4>
-          <p style="color: #00aeef">
+          <h4 style="color: #363535" id="speaker_leonardo">
+            Dr. Leonardo Muzzi
+          </h4>
+          <p style="color: #00aeef" id="speaker_leonardo_topics">
             Hands on Cas kit <br />
             Immediate implant placement
           </p>
@@ -125,39 +144,53 @@
 
         <div class="person">
           <img
-            src="./images/meet_imgs/darkoPortrait.jpg"
+            src="./images/meet_imgs/darkoPortrait.webp"
             alt="Medical Proffesional Portrait"
+            loading="lazy"
           />
-          <h4 style="color: #363535">Prof. dr. Darko Božić</h4>
-          <p style="color: #00aeef">Sinus lift</p>
+          <h4 style="color: #363535" id="speaker_darko">
+            Prof. dr. Darko Božić
+          </h4>
+          <p style="color: #00aeef" id="speaker_darko_topics">Sinus lift</p>
         </div>
 
         <div class="person">
           <img
-            src="./images/meet_imgs/zoranPortrait.jpg"
+            src="./images/meet_imgs/zoranPortrait.webp"
             alt="Medical Proffesional Portrait"
+            loading="lazy"
           />
-          <h4 style="color: #363535">Prof. dr. Zoran Tatić</h4>
-          <p style="color: #00aeef">Long implants in posterior maxilla</p>
+          <h4 style="color: #363535" id="speaker_zoran">
+            Prof. dr. Zoran Tatić
+          </h4>
+          <p style="color: #00aeef" id="speaker_zoran_topics">
+            Long implants in posterior maxilla
+          </p>
         </div>
 
         <div class="person">
           <img
-            src="./images/meet_imgs/vladimirPortrait.jpg"
+            src="./images/meet_imgs/vladimirPortrait.webp"
             alt="Medical Proffesional Portrait"
+            loading="lazy"
           />
-          <h4 style="color: #363535">Prof. dr. Vladimir Biočanin</h4>
-          <p style="color: #00aeef">Split crest with esset kit</p>
+          <h4 style="color: #363535" id="speaker_vladimir">
+            Prof. dr. Vladimir Biočanin
+          </h4>
+          <p style="color: #00aeef" id="speaker_vladimir_topics">
+            Split crest with esset kit
+          </p>
         </div>
       </div>
     </div>
 
     <div id="schedule_container">
-      <h3>Schedule</h3>
+      <h3 id="schedule_title">Schedule</h3>
       <div id="schedule_day1">
         <h4 style="color: #00ade9">
-          <span class="dayText1">15/05/2026</span> <br />
-          <span class="dayText2">(Day 1)</span>
+          <span class="dayText1" id="schedule_day1_date">15/05/2026</span>
+          <br />
+          <span class="dayText2" id="schedule_day1_label">(Day 1)</span>
         </h4>
 
         <div class="timeEventContainer">
@@ -178,8 +211,9 @@
 
       <div id="schedule_day2">
         <h4 style="color: #00ade9">
-          <span class="dayText1">16/05/2026</span> <br />
-          <span class="dayText2">(Day 5)</span>
+          <span class="dayText1" id="schedule_day2_date">16/05/2026</span>
+          <br />
+          <span class="dayText2" id="schedule_day2_label">(Day 2)</span>
         </h4>
 
         <div class="timeEventContainer">
@@ -198,7 +232,7 @@
           <p class="time">10.00 - 11.00h</p>
           <p class="activity">
             <span class="blackText">Sinus lift</span> <br />
-            Prof. Darko božić (HR)
+            Prof. Darko Božić (HR)
           </p>
         </div>
 
@@ -255,126 +289,169 @@
     </div>
 
     <section class="fees-section" id="fee_scroll">
-      <h2 class="fees-title">Fees</h2>
+      <h2 class="fees-title" id="fees_title">Fees</h2>
 
       <div class="fees-container">
         <!-- Lectures -->
         <div class="fees-block">
-          <h3>Lectures</h3>
+          <h3 id="fees_lectures_title">Lectures</h3>
           <div class="fees-row thickBorderBottom">
-            <span class="blackTextFees">Registration type</span>
-            <span>Deadline</span>
-            <span>Fee</span>
+            <span class="blackTextFees" id="fees_lectures_header"
+              >Registration type</span
+            >
+            <span id="fees_lectures_deadline2">Deadline</span>
+            <span id="fees_lectures_fee2">Fee</span>
           </div>
-          <div class="fees-row">
-            <span>Early</span>
-            <span>by April 15th</span>
-            <span>200KM</span>
+          <div class="fees-row" id="fees_lectures_early">
+            <span id="fees_lectures_early_type">Early</span>
+            <span id="fees_lectures_early_deadline">by April 15th</span>
+            <span id="fees_lectures_early_fee">200KM</span>
           </div>
-          <div class="fees-row noBorder">
-            <span>Late</span>
-            <span>After April 15th</span>
-            <span>250KM</span>
+          <div class="fees-row noBorder" id="fees_lectures_late">
+            <span id="fees_lectures_late_type">Late</span>
+            <span id="fees_lectures_late_deadline">After April 15th</span>
+            <span id="fees_lectures_late_fee">250KM</span>
           </div>
         </div>
 
         <!-- Hands-On Courses -->
         <div class="fees-block">
-          <h3>Hands-On Courses</h3>
+          <h3 id="fees_handson_title">Hands-On Courses</h3>
           <div class="fees-row thickBorderBottom">
-            <span class="blackTextFees">Registration type</span>
-            <span>Deadline</span>
-            <span>Fee</span>
+            <span class="blackTextFees" id="fees_handson_header"
+              >Registration type</span
+            >
+            <span id="fees_lectures_deadline">Deadline</span>
+            <span id="fees_lectures_fee">Fee</span>
           </div>
-          <div class="fees-row">
-            <span>Early</span>
-            <span>by April 15th</span>
-            <span>400KM</span>
+          <div class="fees-row" id="fees_handson_early">
+            <span id="fees_handson_early_type">Early</span>
+            <span id="fees_handson_early_deadline">by April 15th</span>
+            <span id="fees_handson_early_fee">400KM</span>
           </div>
-          <div class="fees-row noBorder">
-            <span>Late</span>
-            <span>After April 15th</span>
-            <span>600KM</span>
+          <div class="fees-row noBorder" id="fees_handson_late">
+            <span id="fees_handson_late_type">Late</span>
+            <span id="fees_handson_late_deadline">After April 15th</span>
+            <span id="fees_handson_late_fee">600KM</span>
           </div>
         </div>
 
         <!-- Lectures + Hands-On Courses -->
         <div class="fees-block">
-          <h3>Lectures + Hands-On Courses</h3>
+          <h3 id="fees_combo_title">Lectures + Hands-On Courses</h3>
           <div class="fees-row fees-row-2col thickBorderBottom">
-            <span class="blackTextFees">Package</span>
-            <span>Fee</span>
+            <span class="blackTextFees" id="fees_combo_header">Package</span>
+            <span id="fees_combo_fee">Fee</span>
           </div>
-          <div class="fees-row fees-row-2col">
-            <span>Lectures + 1 course of choice</span>
-            <span>500KM</span>
+          <div class="fees-row fees-row-2col" id="fees_combo_1course">
+            <span id="fees_combo_1course_package"
+              >Lectures + 1 course of choice</span
+            >
+            <span id="fees_combo_1course_fee">500KM</span>
           </div>
-          <div class="fees-row fees-row-2col noBorder">
-            <span>Lectures + 2 courses of choice</span>
-            <span>800KM</span>
+          <div class="fees-row fees-row-2col noBorder" id="fees_combo_2course">
+            <span id="fees_combo_2course_package"
+              >Lectures + 2 courses of choice</span
+            >
+            <span id="fees_combo_2course_fee">800KM</span>
           </div>
         </div>
 
         <!-- Special Offers -->
         <div class="fees-block">
-          <h3>Special Offers</h3>
-          <div class="fees-row fees-row-1col thickBorderBottom">
-            <span class="blackTextFees"
+          <h3 id="fees_special_title">Special Offers</h3>
+          <div
+            class="fees-row fees-row-1col thickBorderBottom"
+            id="fees_special_implants"
+          >
+            <span class="blackTextFees" id="fees_special_implants_condition"
               >20 Hiossen implants and a surgical kit</span
             >
-            → Free lectures + both hands-on courses
+            →
+            <span id="fees_special_implants_benefit"
+              >Free lectures + both hands-on courses</span
+            >
           </div>
-          <div class="fees-row fees-row-1col">
-            <span class="blackTextFees">Spend 1000KM on selected items</span> →
-            Free lectures
+          <div class="fees-row fees-row-1col" id="fees_special_1000km">
+            <span class="blackTextFees" id="fees_special_1000km_condition"
+              >Spend 1000KM on selected items</span
+            >
+            →
+            <span id="fees_special_1000km_benefit">Free lectures</span>
           </div>
-          <div class="fees-row fees-row-1col noBorder">
-            <span class="blackTextFees">Spend 2000KM on selected items</span> →
-            Free lectures + 1 hands-on course of choice
+          <div class="fees-row fees-row-1col noBorder" id="fees_special_2000km">
+            <span class="blackTextFees" id="fees_special_2000km_condition"
+              >Spend 2000KM on selected items</span
+            >
+            →
+            <span id="fees_special_2000km_benefit"
+              >Free lectures + 1 hands-on course of choice</span
+            >
           </div>
         </div>
       </div>
     </section>
 
     <div id="form_container">
-      <h3 style="color: #00ade9">Register now</h3>
+      <h3 style="color: #00ade9" id="form_title">Register now</h3>
       <form id="excelForm" required pattern="^\+?\d{7,15}$">
-        <input type="text" name="name" placeholder="Name" required /><br />
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          id="form_name"
+          required
+        /><br />
         <input
           type="text"
           name="surname"
           placeholder="Surname"
+          id="form_surname"
           required
         /><br />
-        <input type="text" name="title" placeholder="Title" required /><br />
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          id="form_title_label"
+          required
+        /><br />
         <input
           type="text"
           name="organization"
           placeholder="Organization"
+          id="form_organization"
           required
         /><br />
-        <input type="text" name="city" placeholder="City" required /><br />
+        <input
+          type="text"
+          name="city"
+          placeholder="City"
+          id="form_city"
+          required
+        /><br />
         <input
           type="text"
           name="country"
           placeholder="Country"
+          id="form_country"
           required
         /><br />
-        <input type="text" name="phone" placeholder="Phone" required /><br />
+        <input
+          type="text"
+          name="phone"
+          placeholder="Phone"
+          id="form_phone"
+          required
+        /><br />
         <div id="submitContainer">
-          <button id="submitButton" type="submit">Send</button>
+          <button id="form_submit" type="submit">Send</button>
         </div>
       </form>
-      <p>
-        Note: For payments until Month 00, 2026. a more favorable registration
-        fee is achieved. The registration fee can be paid via transaction
-        account number: <br />
-        Bank 0000000000000
-      </p>
     </div>
 
     <div id="footer_container">
-      <p>Balkan Osstem osseointegration meeting</p>
+      <p id="footer_text">Balkan Osstem osseointegration meeting</p>
       <div id="footer_icons">
         <a href="">
           <img
