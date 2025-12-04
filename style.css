@@ -233,12 +233,18 @@ a {
 }
 
 #saveTheDate {
-  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
+  font-family: "br_omegaregular", "Grotek", "Styrene", "NN Nouvelle Grotesk STD",
     sans-serif;
   font-weight: bold;
   font-size: clamp(20px, 4vw, 50px);
   padding-left: 20px;
   padding-right: 20px;
+  color: #fff !important;
+}
+
+#saveTheDate,
+#saveTheDate * {
+  color: #fff !important;
 }
 
 /* HEADER STYLES -------------------------------*/
